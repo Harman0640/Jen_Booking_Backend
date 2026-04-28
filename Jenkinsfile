@@ -11,18 +11,18 @@ pipeline{
         }
         stage('install dependency'){
             steps{
-                sh ' ' '
+                sh '''
                 sudo apt install python3-venv -y
                 python3 -m venv $VENV
-                ' ' '
+                '''
             }
         }
         stage('Run'){
             steps{
-                sh ' ' '
+                sh '''
                 $VENV/bin/pip install -r requirements.txt
                 $VENV/bin/uvicorn unified_main:app --host 0.0.0.0 --port 8000 
-                ' ' '
+                '''
             }
         }
     }
