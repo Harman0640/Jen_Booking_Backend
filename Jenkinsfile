@@ -22,7 +22,7 @@ pipeline{
             steps{
                 sh '''
                 $VENV/bin/pip install -r requirements.txt
-                sudo -u ubuntu /usr/bin/pm2 delete karan 
+                sudo -u ubuntu /usr/bin/pm2 delete karan || true
                 sudo -u ubuntu /usr/bin/pm2 start $VENV/bin/uvicorn --name karan -- unified_main:app --host 0.0.0.0 --port 8000
 
                 '''
