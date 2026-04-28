@@ -6,7 +6,8 @@ pipeline{
     stages{
         stage('Clone Repository'){
             steps{
-                sh git url: 'https://github.com/Harman0640/Jen_Booking_Backend.git' ,branch: 'main'
+                git url: 'https://github.com/Harman0640/Jen_Booking_Backend.git' ,branch: 'main'
+              //  git branch: 'main', url: 'https://github.com/Harman0640/Jen_Booking_Backend.git'
             }
         }
         stage('install dependency'){
